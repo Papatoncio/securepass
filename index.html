@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecurePass</title>
+
+    <meta
+      name="description"
+      content="SecurePass es un generador de contraseñas seguras, adecuandose a las preferencias del usuario."
+    />
+
+    <!--Open Graph-->
+
+    <meta property="og:title" content="SecurePass" />
+    <meta
+      property="og:description"
+      content="SecurePass es un generador de contraseñas seguras, adecuandose a las preferencias del usuario."
+    />
+
+    <!--Imagen-->
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="SecurePass" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09f" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/b696b04146.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>SecurePass</h1>
+
+      <nav style="display: flex; gap: 12px; align-items: center">
+        <a
+          href="https://linkedin.com/in/juan-pablo-jiménez-jaime-584a5817b"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fa-brands fa-linkedin"></i
+        ></a>
+
+        <a
+          href="https://github.com/Papatoncio"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i class="fa-brands fa-github"></i
+        ></a>
+
+        <button id="toggle-theme" style="padding: 0">
+          <i
+            id="moon"
+            class="fa-solid fa-moon"
+            style="grid-area: 1 / 1 / 2 / 2; color: #fff"
+          ></i>
+          <i
+            id="sun"
+            class="fa-solid fa-sun"
+            style="grid-area: 1 / 1 / 2 / 2; color: #fff"
+          ></i>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="pass-generator">
+        <article>
+          <form id="pass-form" action="">
+            <h3>
+              Generador de Contraseñas
+              <span>
+                <i id="key" class="icon fa-solid fa-key"></i>
+              </span>
+            </h3>
+
+            <div id="pass-input">
+              <input
+                type="text"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+              />
+              <button onclick="copiarPassword()" type="button" id="copy-button">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+
+            <header><h3>Parámetros</h3></header>
+
+            <div style="align-items: center">
+              <h4 for="num-chars" style="margin: 0px 0px 12px 0px">
+                Número de caracteres
+                <span>
+                  <i id="key" class="icon fa-solid fa-hashtag"></i>
+                </span>
+              </h4>
+              <input
+                type="number"
+                name="num-chars"
+                id="num-chars"
+                value="16"
+                min="1"
+                max="50"
+              />
+            </div>
+
+            <ul class="ul-2col">
+              <span class="checkbox-input">
+                <input
+                  type="checkbox"
+                  name="mayus"
+                  id="mayus"
+                  checked
+                  tooltip="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"
+                />
+                <label for="mayus">Mayúsculas</label>
+              </span>
+
+              <span class="checkbox-input">
+                <input
+                  type="checkbox"
+                  name="minus"
+                  id="minus"
+                  checked
+                  tooltip="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"
+                />
+                <label for="minus">Minúsculas</label>
+              </span>
+
+              <span class="checkbox-input">
+                <input
+                  type="checkbox"
+                  name="nums"
+                  id="nums"
+                  checked
+                  tooltip="1,2,3,4,5,6,7,8,9,0"
+                />
+                <label for="nums">Números</label>
+              </span>
+
+              <span class="checkbox-input">
+                <input
+                  type="checkbox"
+                  name="special-chars"
+                  id="special-chars"
+                  checked
+                  tooltip="!,@,#,$,%,^,&,*,(,),-,_,=,+,[,],{,},;,:"
+                />
+                <label for="special-chars">Carácteres especiales</label>
+              </span>
+            </ul>
+
+            <button type="submit" id="generate" class="button">
+              Generar Contraseña
+            </button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer id="footer">Hecho por Juan Pablo Jiménez Jaime.</footer>
+
+    <dialog id="dialog">
+      <h3>Mensaje importante</h3>
+      <p>Este es un diálogo nativo en HTML5.</p>
+      <button id="closeDialog">Cerrar</button>
+    </dialog>
+
+    <script src="main.js"></script>
+  </body>
+</html>
